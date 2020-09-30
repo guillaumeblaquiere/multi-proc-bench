@@ -62,7 +62,7 @@ gcloud compute firewall-rules create --allow=tcp:8080 --source-ranges=0.0.0.0/0 
 echo "Create Compute Engine"
 gcloud beta compute instances create ${BASE_NAME}-${NB_CPU} --project=${PROJECT_ID} --zone=${ZONE} \
   --machine-type=${MACHINE_TYPE} --image-project=cos-cloud --image-family=cos-85-lts --boot-disk-size=10GB \
-  --boot-disk-type=pd-standard --subnet=us-central1 --tags=${BASE_NAME} --metadata=startup-script="#!/bin/bash
+  --boot-disk-type=pd-standard --subnet=default --tags=${BASE_NAME} --metadata=startup-script="#!/bin/bash
   export HOME=/tmp
   docker-credential-gcr configure-docker
   docker run --cpus=${LIMIT_CPU} --memory=2000m -d -p 8080:8080 ${DOCKER_TAG}"
