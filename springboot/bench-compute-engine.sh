@@ -100,6 +100,6 @@ gcloud compute firewall-rules delete ${BASE_NAME}-http --quiet --project=${PROJE
 
 echo "Delete the instance"
 gcloud compute instances delete ${BASE_NAME}-${NB_CPU} --project=${PROJECT_ID} --zone=${ZONE} --quiet
-#PROJECT_ID=gbl-ist-ve-digitalfactorytest1 bash bench-compute-engine.sh
+
 
 
